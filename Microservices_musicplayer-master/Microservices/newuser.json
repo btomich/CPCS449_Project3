@@ -1,0 +1,77 @@
+{
+    "username": "bony2019",
+    "full_name": "Bony Roy",
+    "password": "bonyroy",
+    "email": "bony@gmail.com",
+    "homeurl":"www.google.com"
+}
+{
+    "username": "bony2018",
+    "full_name": "Bony Roy 2",
+    "password": "bonyroy2",
+    "email": "bony2@gmail.com"
+}
+{
+    "username": "bony2019",
+    "password": "bonyroy"
+}
+{
+    "username": "bony2019",
+    "password_old": "bonyroy",
+    "password_new": "bonyroynew"
+}
+{
+    "trackurl": "track123",
+    "username": "bony2018",
+    "description": "My favourite track1!"
+}
+
+{
+    "trackurl": "trackurl1",
+    "username": "Aleckie",
+    "description": "My track1!"
+}
+{
+    "username": "Aleckie",
+    "password": "bonyroy"
+}
+
+{
+  "track_title": "Shape of you",
+  "album_title": "shape of you",
+  "artist": "Aleckie",
+  "track_length": "2.30",
+  "URL_media": "night.co"
+}
+{
+    "Status": "805944b7-b211-4e26-b74e-6c75d92cbadf"
+}
+{
+  "track_title": "Shape of you 2",
+  "album_title": "shape of you 2",
+  "artist": "Aleckie2",
+  "track_length": "2.30",
+  "URL_media": "night2.co"
+}
+
+{
+    "Status": "7844dd14-499a-4d64-8a78-62cc35205449"
+}
+{
+  "track_title": "Shape of you update",
+  "album_title": "shape of you 2",
+  "artist": "Aleckie2",
+  "track_length": "2.30",
+  "URL_media": "night2.co"
+}
+{
+    "trackurl": "night2.co",
+    "username": "Aleckie",
+    "description": "My track1!"
+}
+{
+"playlist_title": "Ed-sheren",
+"URL_list": "[\"Track1\",\"Track2\",\"Track3\",\"Track4\"]",
+"username": "Aleckie",
+"description": "ed-playlist"
+}

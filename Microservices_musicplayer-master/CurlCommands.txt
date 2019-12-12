@@ -1,0 +1,142 @@
+//configure upstream for users service
+
+$ curl -i -X POST http://localhost:8001/upstreams \
+  --data "name=users.v1.service"
+
+//add three targets to the users upstream 
+
+$ curl -i -X POST http://localhost:8001/upstreams/users.v1.service/targets \
+  --data "target=127.0.0.1:5000"
+  --data "weight=100"
+
+$ curl -i -X POST http://localhost:8001/upstreams/users.v1.service/targets \
+  --data "target=127.0.0.1:5001"
+  --data "weight=100"
+
+$ curl -i -X POST http://localhost:8001/upstreams/users.v1.service/targets \
+  --data "target=127.0.0.1:5002"
+  --data "weight=100"
+
+//create service targeting users upstream
+$ curl -i -X POST http://localhost:8001/services/ \
+  --data 'name=users-service' \
+  --data 'host=users.v1.service' \
+  --data 'path=/api/users'
+
+//add route to users service
+
+$ curl -i -X POST \
+ --url http://localhost:8001/services/users-service/routes \
+ --data 'paths[]=/users' 
+
+----------------------------------------------------------------------------------
+//configure upstream for playlists service
+
+$ curl -i -X POST http://localhost:8001/upstreams \
+  --data "name=playlists.v1.service"
+
+//add three targets to the playlists upstream 
+
+$ curl -i -X POST http://localhost:8001/upstreams/playlists.v1.service/targets \
+  --data "target=127.0.0.1:5300"
+  --data "weight=100"
+
+$ curl -i -X POST http://localhost:8001/upstreams/playlists.v1.service/targets \
+  --data "target=127.0.0.1:5301"
+  --data "weight=100"
+
+$ curl -i -X POST http://localhost:8001/upstreams/playlists.v1.service/targets \
+  --data "target=127.0.0.1:5302"
+  --data "weight=100"
+
+//create service targeting playlists upstream
+$ curl -i -X POST http://localhost:8001/services/ \
+  --data 'name=playlists-service' \
+  --data 'host=playlists.v1.service' \
+  --data 'path=/recources/playlists'
+
+//add route to playlists service
+$ curl -i -X POST \
+ --url http://localhost:8001/services/playlists-service/routes \
+ --data 'paths[]=/playlists' 
+
+-------------------------------------------------------------------------------
+//configure upstream for desc service
+
+$ curl -i -X POST http://localhost:8001/upstreams \
+  --data "name=desc.v1.service"
+
+//add three targets to the desc upstream 
+
+$ curl -i -X POST http://localhost:8001/upstreams/desc.v1.service/targets \
+  --data "target=127.0.0.1:5100"
+  --data "weight=100"
+
+$ curl -i -X POST http://localhost:8001/upstreams/desc.v1.service/targets \
+  --data "target=127.0.0.1:5101"
+  --data "weight=100"
+
+$ curl -i -X POST http://localhost:8001/upstreams/desc.v1.service/targets \
+  --data "target=127.0.0.1:5102"
+  --data "weight=100"
+
+//create service targeting desc upstream
+$ curl -i -X POST http://localhost:8001/services/ \
+  --data 'name=desc-service' \
+  --data 'host=desc.v1.service' \
+  --data 'path=/api/users/gettrackdesc'
+
+//add route to desc service
+
+$ curl -i -X POST \
+ --url http://localhost:8001/services/desc-service/routes \
+ --data 'paths[]=/description'
+------------------------------------------------------------------------------------
+//configure upstream for tracks service
+
+$ curl -i -X POST http://localhost:8001/upstreams \
+  --data "name=tracks.v1.service"
+
+//add three targets to the tracks upstream 
+
+$ curl -i -X POST http://localhost:8001/upstreams/tracks.v1.service/targets \
+  --data "target=127.0.0.1:5200"
+  --data "weight=100"
+
+$ curl -i -X POST http://localhost:8001/upstreams/tracks.v1.service/targets \
+  --data "target=127.0.0.1:5201"
+  --data "weight=100"
+
+$ curl -i -X POST http://localhost:8001/upstreams/tracks.v1.service/targets \
+  --data "target=127.0.0.1:5202"
+  --data "weight=100"
+
+//create service targeting tracks upstream
+$ curl -i -X POST http://localhost:8001/services/ \
+  --data 'name=tracks-service' \
+  --data 'host=tracks.v1.service' \
+  --data 'path=/recources/tracks'
+
+////add route to tracks service
+$ curl -i -X POST \
+ --url http://localhost:8001/services/tracks-service/routes \
+ --data 'paths[]=/tracks'
+--------------------------------------------------------------------------------------
+//configure service for minio 
+
+curl -i -X POST \
+  --url http://localhost:8001/services/ \
+  --data 'name=media' \
+  --data 'url=http://localhost:9000/media'
+
+//add route for minio
+
+curl -i -X POST \
+--url http://localhost:8001/services/media/routes \
+--data 'paths[]=/media'
+
+
+
+
+
+

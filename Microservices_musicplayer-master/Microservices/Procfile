@@ -1,0 +1,4 @@
+users: FLASK_APP=user.py flask run -p 9000
+desc:  FLASK_APP=desc.py flask run -p 9001
+Tracks: FLASK_APP=Tracks.py flask run -p 9002
+Playlist: FLASK_APP=Playlist.py flask run -p 9003

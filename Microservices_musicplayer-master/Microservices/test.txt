@@ -1,0 +1,38 @@
+
+flask shell
+Python 3.7.3 (default, Oct  7 2019, 12:56:13)
+[GCC 8.3.0] on linux
+App: api [development]
+Instance: /home/student/Desktop/449/project1/instance
+>>> bcrypt
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'bcrypt' is not defined
+>>> import bcrypt
+>>> bcrypt.ashpw(base64.b64encode(hashlib.sha256('newpassword'..encode('utf-8')).digest()), b'$2b$12$DbmIZ/a5LByoJHgFItyZCe').decode('utf-8')
+  File "<console>", line 1
+    bcrypt.ashpw(base64.b64encode(hashlib.sha256('newpassword'..encode('utf-8')).digest()), b'$2b$12$DbmIZ/a5LByoJHgFItyZCe').decode('utf-8')
+                                                               ^
+SyntaxError: invalid syntax
+>>> bcrypt.ashpw(base64.b64encode(hashlib.sha256('newpassword'.encode('utf-8')).digest()), b'$2b$12$DbmIZ/a5LByoJHgFItyZCe').decode('utf-8')
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: module 'bcrypt' has no attribute 'ashpw'
+>>> bcrypt.hashpw(base64.b64encode(hashlib.sha256('newpassword'.encode('utf-8')).digest()), b'$2b$12$DbmIZ/a5LByoJHgFItyZCe').decode('utf-8')
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'base64' is not defined
+>>> import base64
+>>> bcrypt.hashpw(base64.b64encode(hashlib.sha256('newpassword'.encode('utf-8')).digest()), b'$2b$12$DbmIZ/a5LByoJHgFItyZCe').decode('utf-8')
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'hashlib' is not defined
+>>> import hashlib
+>>> bcrypt.hashpw(base64.b64encode(hashlib.sha256('newpassword'.encode('utf-8')).digest()), b'$2b$12$DbmIZ/a5LByoJHgFItyZCe').decode('utf-8')
+'$2b$12$DbmIZ/a5LByoJHgFItyZCeIEHz9koaXCGjwc/fLJAPp5G6jmQvg4u'
+>>> bcrypt.hashpw(base64.b64encode(hashlib.sha256('anotherpassword'.encode('utf-8')).digest()), b'$2b$12$DbmIZ/a5LByoJHgFItyZCe').decode('utf-8')
+'$2b$12$DbmIZ/a5LByoJHgFItyZCeo8m4nw6P.T3GKDHIn3FV0PgevonZHa.'
+
+---------------------------
+bcrypt.hashpw(base64.b64encode(hashlib.sha256('newpassword'.encode('utf-8')).digest()), b'$2b$12$DbmIZ/a5LByoJHgFItyZCe').decode('utf-8')
+'$2b$12$DbmIZ/a5LByoJHgFItyZCeIEHz9koaXCGjwc/fLJAPp5G6jmQvg4u'
